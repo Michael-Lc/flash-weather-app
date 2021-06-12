@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Weather</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <!-- <video id="bg-video" class="bg-video" autoplay loop muted>
+        <source src="./videos/Cloudy-Day.mp4" type="video/mp4">
+    </video> -->
+    <header class="header">
+        <div class="head">
+            <span class="location" id="location">{{ data['name']}}</span>
+            <span class="date" id="date">{{ data['date'] }}</span>
+        </div>
+
+        <div class="header-details">
+            <div>
+                <span class="temperature" id="temp">{{ data['temp'] }}</span>
+                <span>&deg;C</span>
+            </div>
+            <div class="description-container">
+                <div class="icon-container">
+                    <img src="{{ data['icon'] }}" alt="weather icon" id="icon" class="icon">
+                </div>
+                <span class="condition" id="condition">{{ data['text']}}</span>
+            </div>
+        </div>
+    </header>
+
+    <form action="/" method="POST" class="search-container" id="search-form">
+        <input type="search" name="search" id="search" class="search" placeholder="Search City" autocomplete="off" />
+        <ul class="auto-complete" id="auto-complete">
+            <!-- <li class="auto-complete-item">Something</li>
+                <li class="auto-complete-item">Something</li>
+                <li class="auto-complete-item">Something</li> -->
+        </ul>
+    </form>
+</div>
+{% endblock %}
